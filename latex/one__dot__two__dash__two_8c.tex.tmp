@@ -1,0 +1,96 @@
+\hypertarget{one__dot__two__dash__two_8c}{}\section{section\+\_\+one/one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.c File Reference}
+\label{one__dot__two__dash__two_8c}\index{section\+\_\+one/one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{section\+\_\+one/one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}}
+
+
+Solution to Introduction to Algorithms Question 1.\+2-\/2.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+Include dependency graph for one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{one__dot__two__dash__two_8c_a90ac2dcb10708eca31a79e2823bb3bfa}{newtons\+\_\+method} (double($\ast$f)(double), double($\ast$fprime)(double), double $\ast$guess, double tol)
+\begin{DoxyCompactList}\small\item\em Newtons Method solver for root of function. \end{DoxyCompactList}\item 
+double \hyperlink{one__dot__two__dash__two_8c_ac84831571c8f3d0bca83c1747a32e8d6}{g} (double x)
+\begin{DoxyCompactList}\small\item\em Excercise 1.\+2-\/2 asks at what length of input N an algorithm which runs in 64$\ast$\+N$\ast$log\+\_\+2(N) faster than an 8$\ast$\+N$\ast$N algorithm. \end{DoxyCompactList}\item 
+double \hyperlink{one__dot__two__dash__two_8c_aae8a0b31b39a71053d959cb27e842e7d}{gprime} (double x)
+\item 
+int \hyperlink{one__dot__two__dash__two_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Solution to Introduction to Algorithms Question 1.\+2-\/2. 
+
+Scott Garner \begin{DoxyDate}{Date}
+Nov 2 2021 A solution to excercise 1.\+2-\/2 in Introduction to Algorithms, 3rd Edition. Solution finds the root of a polynomial via Newtons method. 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\index{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}!g@{g}}
+\index{g@{g}!one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}}
+\subsubsection[{\texorpdfstring{g(double x)}{g(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double g (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{one__dot__two__dash__two_8c_ac84831571c8f3d0bca83c1747a32e8d6}{}\label{one__dot__two__dash__two_8c_ac84831571c8f3d0bca83c1747a32e8d6}
+
+
+Excercise 1.\+2-\/2 asks at what length of input N an algorithm which runs in 64$\ast$\+N$\ast$log\+\_\+2(N) faster than an 8$\ast$\+N$\ast$N algorithm. 
+
+We\textquotesingle{}ll solve this by solving the equation
+
+$ 8*N*N - 64*N*log_2(N) = 0 $
+
+$ N(8*N - 64*log_2(N)) = 0 $
+
+Solving the second equation is fine, since the trivial solution of \$N=0\$ can be ignored
+
+Change of log base to natural log in the standard math library is $ log_b(x)= \frac{log_a(x)}{log_a(b)} $ \index{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}!gprime@{gprime}}
+\index{gprime@{gprime}!one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}}
+\subsubsection[{\texorpdfstring{gprime(double x)}{gprime(double x)}}]{\setlength{\rightskip}{0pt plus 5cm}double gprime (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{one__dot__two__dash__two_8c_aae8a0b31b39a71053d959cb27e842e7d}{}\label{one__dot__two__dash__two_8c_aae8a0b31b39a71053d959cb27e842e7d}
+\index{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}!main@{main}}
+\index{main@{main}!one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{one__dot__two__dash__two_8c_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{one__dot__two__dash__two_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+\index{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}!newtons\+\_\+method@{newtons\+\_\+method}}
+\index{newtons\+\_\+method@{newtons\+\_\+method}!one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}}
+\subsubsection[{\texorpdfstring{newtons\+\_\+method(double($\ast$f)(double), double($\ast$fprime)(double), double $\ast$guess, double tol)}{newtons_method(double(*f)(double), double(*fprime)(double), double *guess, double tol)}}]{\setlength{\rightskip}{0pt plus 5cm}int newtons\+\_\+method (
+\begin{DoxyParamCaption}
+\item[{double($\ast$)(double)}]{f, }
+\item[{double($\ast$)(double)}]{fprime, }
+\item[{double $\ast$}]{guess, }
+\item[{double}]{tol}
+\end{DoxyParamCaption}
+)}\hypertarget{one__dot__two__dash__two_8c_a90ac2dcb10708eca31a79e2823bb3bfa}{}\label{one__dot__two__dash__two_8c_a90ac2dcb10708eca31a79e2823bb3bfa}
+
+
+Newtons Method solver for root of function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & $ f(x) $ \\
+\hline
+{\em fprime} & $ f'(x) $ \\
+\hline
+{\em guess} & Initial guess for $x_0$. Updated to root of function on return \\
+\hline
+{\em tol} & Convergence tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success Returns 0 if root within tolerance is found, current value of guess if not 
+\end{DoxyReturn}
