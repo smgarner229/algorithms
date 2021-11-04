@@ -6,7 +6,7 @@
  * @file one_dot_two_dash_two.c
  * @auther Scott Garner
  * @date Nov 2 2021
- * @brief Solution to Introduction to Algorithms Question 1.2-2
+ * @brief Solution to Introduction to Algorithms Excercise 1.2-2
  * 
  * A solution to excercise 1.2-2 in Introduction to Algorithms, 3rd Edition.
  * Solution finds the root of a polynomial via Newtons method.
@@ -20,9 +20,9 @@
  * @param fprime    \f$ f'(x) \f$
  * @param guess     Initial guess for \f$x_0\f$.  Updated to root of function on return
  * @param tol       Convergence tolerance
- * @return success  Returns 0 if root within tolerance is found, current value of guess if not
+ * @return success  Returns \f$x_n\f$ cast to an integer.  If solution is found this is 0, otherwise nonzero
  *
- *
+ * 
  */
 int newtons_method(double (*f)(double),double (*fprime)(double),double * guess,double tol)
 {
@@ -44,7 +44,7 @@ int newtons_method(double (*f)(double),double (*fprime)(double),double * guess,d
 }
 
 /**
- * @brief
+ * @brief Function to look for roots of
  *
  * Excercise 1.2-2 asks at what length of input N an algorithm which runs in 64*N*log_2(N)
  * faster than an 8*N*N algorithm.
@@ -66,6 +66,13 @@ double g(double x)
     return (8. * x - 64. * (log(x)/log(2.)));
 }
 
+/**
+ * @brief Derivative of \f$ g(x) \f$
+ * 
+ *
+ *
+ *
+ */
 double gprime(double x)
 {
     return 8 - (64. / log(2.)) / x;
