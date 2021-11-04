@@ -2,7 +2,7 @@
 \label{one__dot__two__dash__two_8c}\index{section\+\_\+one/one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{section\+\_\+one/one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}}
 
 
-Solution to Introduction to Algorithms Question 1.\+2-\/2.  
+Solution to Introduction to Algorithms Excercise 1.\+2-\/2.  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
@@ -16,15 +16,15 @@ Include dependency graph for one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c\+:
 int \hyperlink{one__dot__two__dash__two_8c_a90ac2dcb10708eca31a79e2823bb3bfa}{newtons\+\_\+method} (double($\ast$f)(double), double($\ast$fprime)(double), double $\ast$guess, double tol)
 \begin{DoxyCompactList}\small\item\em Newtons Method solver for root of function. \end{DoxyCompactList}\item 
 double \hyperlink{one__dot__two__dash__two_8c_ac84831571c8f3d0bca83c1747a32e8d6}{g} (double x)
-\begin{DoxyCompactList}\small\item\em Excercise 1.\+2-\/2 asks at what length of input N an algorithm which runs in 64$\ast$\+N$\ast$log\+\_\+2(N) faster than an 8$\ast$\+N$\ast$N algorithm. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Function to look for roots of. \end{DoxyCompactList}\item 
 double \hyperlink{one__dot__two__dash__two_8c_aae8a0b31b39a71053d959cb27e842e7d}{gprime} (double x)
-\item 
+\begin{DoxyCompactList}\small\item\em Derivative of $ g(x) $. \end{DoxyCompactList}\item 
 int \hyperlink{one__dot__two__dash__two_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Solution to Introduction to Algorithms Question 1.\+2-\/2. 
+Solution to Introduction to Algorithms Excercise 1.\+2-\/2. 
 
 Scott Garner \begin{DoxyDate}{Date}
 Nov 2 2021 A solution to excercise 1.\+2-\/2 in Introduction to Algorithms, 3rd Edition. Solution finds the root of a polynomial via Newtons method. 
@@ -41,7 +41,9 @@ Nov 2 2021 A solution to excercise 1.\+2-\/2 in Introduction to Algorithms, 3rd 
 )}\hypertarget{one__dot__two__dash__two_8c_ac84831571c8f3d0bca83c1747a32e8d6}{}\label{one__dot__two__dash__two_8c_ac84831571c8f3d0bca83c1747a32e8d6}
 
 
-Excercise 1.\+2-\/2 asks at what length of input N an algorithm which runs in 64$\ast$\+N$\ast$log\+\_\+2(N) faster than an 8$\ast$\+N$\ast$N algorithm. 
+Function to look for roots of. 
+
+Excercise 1.\+2-\/2 asks at what length of input N an algorithm which runs in 64$\ast$\+N$\ast$log\+\_\+2(N) faster than an 8$\ast$\+N$\ast$N algorithm.
 
 We\textquotesingle{}ll solve this by solving the equation
 
@@ -58,6 +60,10 @@ Change of log base to natural log in the standard math library is $ log_b(x)= \f
 \item[{double}]{x}
 \end{DoxyParamCaption}
 )}\hypertarget{one__dot__two__dash__two_8c_aae8a0b31b39a71053d959cb27e842e7d}{}\label{one__dot__two__dash__two_8c_aae8a0b31b39a71053d959cb27e842e7d}
+
+
+Derivative of $ g(x) $. 
+
 \index{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}!main@{main}}
 \index{main@{main}!one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c@{one\+\_\+dot\+\_\+two\+\_\+dash\+\_\+two.\+c}}
 \subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
@@ -92,5 +98,5 @@ Newtons Method solver for root of function.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-success Returns 0 if root within tolerance is found, current value of guess if not 
+success Returns $x_n$ cast to an integer. If solution is found this is 0, otherwise nonzero 
 \end{DoxyReturn}

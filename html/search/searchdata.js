@@ -1,21 +1,30 @@
 var indexSectionsWithContent =
 {
-  0: "gmnos",
-  1: "os",
-  2: "gmns"
+  0: "abcdegmnos",
+  1: "m",
+  2: "os",
+  3: "cgmns",
+  4: "abcde",
+  5: "m"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "files",
-  2: "functions"
+  1: "classes",
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "typedefs"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Files",
-  2: "Functions"
+  1: "Classes",
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Typedefs"
 };
 

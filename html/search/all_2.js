@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['newtons_5fmethod',['newtons_method',['../one__dot__two__dash__two_8c.html#a90ac2dcb10708eca31a79e2823bb3bfa',1,'one_dot_two_dash_two.c']]]
+  ['c',['c',['../structmy__struct.html#a9180ae117677bb68283a25c4c8d825e5',1,'my_struct']]],
+  ['comp_5fdoubles',['comp_doubles',['../selection__sort_8c.html#a3047c70440ec400374ebee99988d2ba5',1,'selection_sort.c']]],
+  ['comp_5fints',['comp_ints',['../selection__sort_8c.html#a6c0f5ce68e9941854c2744350e2f5118',1,'selection_sort.c']]],
+  ['comp_5fstructs',['comp_structs',['../selection__sort_8c.html#a5586c1612dcb35697780f7dc5328c98a',1,'selection_sort.c']]]
 ];

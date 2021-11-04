@@ -2,18 +2,65 @@
 \label{selection__sort_8c}\index{section\+\_\+one/selection\+\_\+sort.\+c@{section\+\_\+one/selection\+\_\+sort.\+c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
 Include dependency graph for selection\+\_\+sort.\+c\+:
 % FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmy__struct}{my\+\_\+struct}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structmy__struct}{my\+\_\+struct} \hyperlink{selection__sort_8c_aeccd05f04f2e124ec06a8117ab213517}{my\+\_\+struct}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void $\ast$ \hyperlink{selection__sort_8c_adbce24df153f3ce175d85a6716c581a2}{selection\+\_\+sort} (void $\ast$data, size\+\_\+t n\+\_\+elem, size\+\_\+t stride int($\ast$compare)(void $\ast$, void $\ast$))
+void $\ast$ \hyperlink{selection__sort_8c_ae4af0c4e81636299dd31974b555a70ad}{selection\+\_\+sort} (void $\ast$data, size\+\_\+t n\+\_\+elem, size\+\_\+t data\+\_\+size, int($\ast$compare)(void $\ast$, void $\ast$))
+\begin{DoxyCompactList}\small\item\em Selection sort algorithm. \end{DoxyCompactList}\item 
+int \hyperlink{selection__sort_8c_a6c0f5ce68e9941854c2744350e2f5118}{comp\+\_\+ints} (void $\ast$a, void $\ast$b)
+\item 
+int \hyperlink{selection__sort_8c_a3047c70440ec400374ebee99988d2ba5}{comp\+\_\+doubles} (void $\ast$a, void $\ast$b)
+\item 
+int \hyperlink{selection__sort_8c_a5586c1612dcb35697780f7dc5328c98a}{comp\+\_\+structs} (void $\ast$a, void $\ast$b)
 \item 
 int \hyperlink{selection__sort_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
 
 
+\subsection{Typedef Documentation}
+\index{selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}!my\+\_\+struct@{my\+\_\+struct}}
+\index{my\+\_\+struct@{my\+\_\+struct}!selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}}
+\subsubsection[{\texorpdfstring{my\+\_\+struct}{my_struct}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf my\+\_\+struct} {\bf my\+\_\+struct}}\hypertarget{selection__sort_8c_aeccd05f04f2e124ec06a8117ab213517}{}\label{selection__sort_8c_aeccd05f04f2e124ec06a8117ab213517}
+
+
 \subsection{Function Documentation}
+\index{selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}!comp\+\_\+doubles@{comp\+\_\+doubles}}
+\index{comp\+\_\+doubles@{comp\+\_\+doubles}!selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}}
+\subsubsection[{\texorpdfstring{comp\+\_\+doubles(void $\ast$a, void $\ast$b)}{comp_doubles(void *a, void *b)}}]{\setlength{\rightskip}{0pt plus 5cm}int comp\+\_\+doubles (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{a, }
+\item[{void $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{selection__sort_8c_a3047c70440ec400374ebee99988d2ba5}{}\label{selection__sort_8c_a3047c70440ec400374ebee99988d2ba5}
+\index{selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}!comp\+\_\+ints@{comp\+\_\+ints}}
+\index{comp\+\_\+ints@{comp\+\_\+ints}!selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}}
+\subsubsection[{\texorpdfstring{comp\+\_\+ints(void $\ast$a, void $\ast$b)}{comp_ints(void *a, void *b)}}]{\setlength{\rightskip}{0pt plus 5cm}int comp\+\_\+ints (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{a, }
+\item[{void $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{selection__sort_8c_a6c0f5ce68e9941854c2744350e2f5118}{}\label{selection__sort_8c_a6c0f5ce68e9941854c2744350e2f5118}
+\index{selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}!comp\+\_\+structs@{comp\+\_\+structs}}
+\index{comp\+\_\+structs@{comp\+\_\+structs}!selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}}
+\subsubsection[{\texorpdfstring{comp\+\_\+structs(void $\ast$a, void $\ast$b)}{comp_structs(void *a, void *b)}}]{\setlength{\rightskip}{0pt plus 5cm}int comp\+\_\+structs (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{a, }
+\item[{void $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{selection__sort_8c_a5586c1612dcb35697780f7dc5328c98a}{}\label{selection__sort_8c_a5586c1612dcb35697780f7dc5328c98a}
 \index{selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}!main@{main}}
 \index{main@{main}!selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}}
 \subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
@@ -24,10 +71,26 @@ int \hyperlink{selection__sort_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int 
 )}\hypertarget{selection__sort_8c_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{selection__sort_8c_a3c04138a5bfe5d72780bb7e82a18e627}
 \index{selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}!selection\+\_\+sort@{selection\+\_\+sort}}
 \index{selection\+\_\+sort@{selection\+\_\+sort}!selection\+\_\+sort.\+c@{selection\+\_\+sort.\+c}}
-\subsubsection[{\texorpdfstring{selection\+\_\+sort(void $\ast$data, size\+\_\+t n\+\_\+elem, size\+\_\+t stride int($\ast$compare)(void $\ast$, void $\ast$))}{selection_sort(void *data, size_t n_elem, size_t stride int(*compare)(void *, void *))}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ selection\+\_\+sort (
+\subsubsection[{\texorpdfstring{selection\+\_\+sort(void $\ast$data, size\+\_\+t n\+\_\+elem, size\+\_\+t data\+\_\+size, int($\ast$compare)(void $\ast$, void $\ast$))}{selection_sort(void *data, size_t n_elem, size_t data_size, int(*compare)(void *, void *))}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ selection\+\_\+sort (
 \begin{DoxyParamCaption}
 \item[{void $\ast$}]{data, }
 \item[{size\+\_\+t}]{n\+\_\+elem, }
-\item[{size\+\_\+t stride int($\ast$)(void $\ast$, void $\ast$)}]{compare}
+\item[{size\+\_\+t}]{data\+\_\+size, }
+\item[{int($\ast$)(void $\ast$, void $\ast$)}]{compare}
 \end{DoxyParamCaption}
-)}\hypertarget{selection__sort_8c_adbce24df153f3ce175d85a6716c581a2}{}\label{selection__sort_8c_adbce24df153f3ce175d85a6716c581a2}
+)}\hypertarget{selection__sort_8c_ae4af0c4e81636299dd31974b555a70ad}{}\label{selection__sort_8c_ae4af0c4e81636299dd31974b555a70ad}
+
+
+Selection sort algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to start of array of elements \\
+\hline
+{\em n\+\_\+elem} & number of elements \\
+\hline
+{\em data\+\_\+size} & size of the data type being sorted in bytes \\
+\hline
+{\em compare} & Function which takes void pointer to the data type, and determines appropriate order. Returns $<$=0 if the first argument should come first, $>$ 0 if the second \\
+\hline
+\end{DoxyParams}

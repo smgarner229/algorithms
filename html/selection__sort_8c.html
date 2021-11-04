@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -84,6 +85,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">selection_sort.c File Reference</div>  </div>
@@ -91,6 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for selection_sort.c:</div>
 <div class="dyncontent">
@@ -98,14 +102,122 @@ Include dependency graph for selection_sort.c:</div>
 <!-- MAP 0 -->
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmy__struct.html">my_struct</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aeccd05f04f2e124ec06a8117ab213517"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmy__struct.html">my_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection__sort_8c.html#aeccd05f04f2e124ec06a8117ab213517">my_struct</a></td></tr>
+<tr class="separator:aeccd05f04f2e124ec06a8117ab213517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adbce24df153f3ce175d85a6716c581a2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection__sort_8c.html#adbce24df153f3ce175d85a6716c581a2">selection_sort</a> (void *data, size_t n_elem, size_t stride int(*compare)(void *, void *))</td></tr>
-<tr class="separator:adbce24df153f3ce175d85a6716c581a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4af0c4e81636299dd31974b555a70ad"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection__sort_8c.html#ae4af0c4e81636299dd31974b555a70ad">selection_sort</a> (void *data, size_t n_elem, size_t data_size, int(*compare)(void *, void *))</td></tr>
+<tr class="memdesc:ae4af0c4e81636299dd31974b555a70ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selection sort algorithm.  <a href="#ae4af0c4e81636299dd31974b555a70ad">More...</a><br /></td></tr>
+<tr class="separator:ae4af0c4e81636299dd31974b555a70ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0f5ce68e9941854c2744350e2f5118"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection__sort_8c.html#a6c0f5ce68e9941854c2744350e2f5118">comp_ints</a> (void *a, void *b)</td></tr>
+<tr class="separator:a6c0f5ce68e9941854c2744350e2f5118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3047c70440ec400374ebee99988d2ba5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection__sort_8c.html#a3047c70440ec400374ebee99988d2ba5">comp_doubles</a> (void *a, void *b)</td></tr>
+<tr class="separator:a3047c70440ec400374ebee99988d2ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5586c1612dcb35697780f7dc5328c98a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection__sort_8c.html#a5586c1612dcb35697780f7dc5328c98a">comp_structs</a> (void *a, void *b)</td></tr>
+<tr class="separator:a5586c1612dcb35697780f7dc5328c98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection__sort_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="aeccd05f04f2e124ec06a8117ab213517"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structmy__struct.html">my_struct</a> <a class="el" href="structmy__struct.html">my_struct</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a3047c70440ec400374ebee99988d2ba5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int comp_doubles </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c0f5ce68e9941854c2744350e2f5118"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int comp_ints </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5586c1612dcb35697780f7dc5328c98a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int comp_structs </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <div class="memitem">
 <div class="memproto">
@@ -132,7 +244,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adbce24df153f3ce175d85a6716c581a2"></a>
+<a class="anchor" id="ae4af0c4e81636299dd31974b555a70ad"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -151,7 +263,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t stride int(*)(void *, void *)&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void *, void *)&#160;</td>
           <td class="paramname"><em>compare</em>&#160;</td>
         </tr>
         <tr>
@@ -161,6 +279,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Selection sort algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>pointer to start of array of elements </td></tr>
+    <tr><td class="paramname">n_elem</td><td>number of elements </td></tr>
+    <tr><td class="paramname">data_size</td><td>size of the data type being sorted in bytes </td></tr>
+    <tr><td class="paramname">compare</td><td>Function which takes void pointer to the data type, and determines appropriate order. Returns &lt;=0 if the first argument should come first, &gt; 0 if the second </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

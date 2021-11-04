@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -90,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Solution to Introduction to Algorithms Question 1.2-2.  
+<p>Solution to Introduction to Algorithms Excercise 1.2-2.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -109,15 +110,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:a90ac2dcb10708eca31a79e2823bb3bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Newtons Method solver for root of function.  <a href="#a90ac2dcb10708eca31a79e2823bb3bfa">More...</a><br /></td></tr>
 <tr class="separator:a90ac2dcb10708eca31a79e2823bb3bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac84831571c8f3d0bca83c1747a32e8d6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="one__dot__two__dash__two_8c.html#ac84831571c8f3d0bca83c1747a32e8d6">g</a> (double x)</td></tr>
-<tr class="memdesc:ac84831571c8f3d0bca83c1747a32e8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Excercise 1.2-2 asks at what length of input N an algorithm which runs in 64*N*log_2(N) faster than an 8*N*N algorithm.  <a href="#ac84831571c8f3d0bca83c1747a32e8d6">More...</a><br /></td></tr>
+<tr class="memdesc:ac84831571c8f3d0bca83c1747a32e8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to look for roots of.  <a href="#ac84831571c8f3d0bca83c1747a32e8d6">More...</a><br /></td></tr>
 <tr class="separator:ac84831571c8f3d0bca83c1747a32e8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae8a0b31b39a71053d959cb27e842e7d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="one__dot__two__dash__two_8c.html#aae8a0b31b39a71053d959cb27e842e7d">gprime</a> (double x)</td></tr>
+<tr class="memdesc:aae8a0b31b39a71053d959cb27e842e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Derivative of <img class="formulaInl" alt="$ g(x) $" src="form_8.png"/>.  <a href="#aae8a0b31b39a71053d959cb27e842e7d">More...</a><br /></td></tr>
 <tr class="separator:aae8a0b31b39a71053d959cb27e842e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="one__dot__two__dash__two_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Solution to Introduction to Algorithms Question 1.2-2. </p>
+<div class="textblock"><p>Solution to Introduction to Algorithms Excercise 1.2-2. </p>
 <p>Scott Garner </p><dl class="section date"><dt>Date</dt><dd>Nov 2 2021 A solution to excercise 1.2-2 in Introduction to Algorithms, 3rd Edition. Solution finds the root of a polynomial via Newtons method. </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ac84831571c8f3d0bca83c1747a32e8d6"></a>
@@ -134,7 +136,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Excercise 1.2-2 asks at what length of input N an algorithm which runs in 64*N*log_2(N) faster than an 8*N*N algorithm. </p>
+<p>Function to look for roots of. </p>
+<p>Excercise 1.2-2 asks at what length of input N an algorithm which runs in 64*N*log_2(N) faster than an 8*N*N algorithm.</p>
 <p>We'll solve this by solving the equation</p>
 <p><img class="formulaInl" alt="$ 8*N*N - 64*N*log_2(N) = 0 $" src="form_0.png"/></p>
 <p><img class="formulaInl" alt="$ N(8*N - 64*log_2(N)) = 0 $" src="form_1.png"/></p>
@@ -156,6 +159,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Derivative of <img class="formulaInl" alt="$ g(x) $" src="form_8.png"/>. </p>
 
 </div>
 </div>
@@ -231,7 +236,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>success Returns 0 if root within tolerance is found, current value of guess if not </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>success Returns <img class="formulaInl" alt="$x_n$" src="form_7.png"/> cast to an integer. If solution is found this is 0, otherwise nonzero </dd></dl>
 
 </div>
 </div>
