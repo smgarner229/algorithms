@@ -56,6 +56,9 @@ int alphabetically(void * p1, void * p2)
     fprintf(stdout,"Calls to alphabetical sort:\t%d\n",count_calls);
     char n1[20], n2[20];
     print_bits(*((Person*)p1));
+    print_bits(*((Person*)p2));
+    printf("%f\n",((Person*)p1)->height);
+    printf("%f\n",((Person*)p2)->height);
     strcpy(n1,((Person*)p1)->name);
     strcpy(n2,((Person*)p2)->name);
 //    char * n1 = ((Person*)p1)->name;
