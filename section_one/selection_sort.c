@@ -4,7 +4,7 @@
 #include "sort_helpers.h"
 
 /**
- * @brief Insertion sort algorithm.  Thread Safe.
+ * @brief Selection sort algorithm.  Thread Safe.
  * 
  * @param data pointer to start of array of elements
  * @param n_elem number of elements
@@ -12,31 +12,26 @@
  * @param compare  Function which takes void pointer to the data type, and determines appropriate order. 
  *                 Returns <=0 if the first argument should come first, > 0 if the second
  */
-void * insertion_sort(void * data, 
-                      size_t n_elem, 
+
+void * selection_sort(void * data,
+                      size_t n_elem,
                       size_t data_size,
                       int (*compare)(void*,void*))
 {
-    char key[data_size];
-    int j = 0;
-    for(int i = 1; i < n_elem; i++)
+    int cur_min;
+    for(int i = 0; i < n_elem; i++)
     {
-        //Hold onto our current item being sorted, cast into a char array
-        memcpy(key,((char*)data)+i*data_size,data_size);
-        j = i - 1;
-        //Loop down the chain from current item to start of array, exitting when 
-        while(j>=0 & compare(((char*)data)+j*data_size,key) > 0)
+        cur_min = i;
+        for(int j = i + 1; j < n_elem; j++)
         {
-            swap(((char*)data)+(j+1)*data_size,((char*)data)+(j)*data_size,data_size);
-            j--;
+            if(compare(((char*)data)+cur_min*data_size,((char*)data)+j*data_size)>0)
+            {
+                cur_min = j;
+            }
         }
+        swap(((char*)data)+i*data_size,((char*)data)+cur_min*data_size,data_size);
     }
 }
-
-// 2 4 --> -2
-// 4 2 -->  2
-// 0 0 -->  0
-//
 int comp_ints(void * a, void * b)
 {
     int left = *(int *)a;
@@ -76,7 +71,7 @@ int main(int argc, char ** argv)
         fprintf(stdout,"%d\t",sortme[i]);
     fprintf(stdout,"\n");
 
-    insertion_sort(sortme,5,sizeof(int),&comp_ints);
+    selection_sort(sortme,5,sizeof(int),&comp_ints);
 
     for(int i = 0; i < 5; i++)
         fprintf(stdout,"%d\t",sortme[i]);
@@ -87,7 +82,7 @@ int main(int argc, char ** argv)
         fprintf(stdout,"%f\t",andme[i]);
     fprintf(stdout,"\n");
 
-    insertion_sort(andme,9,sizeof(double),&comp_doubles);
+    selection_sort(andme,9,sizeof(double),&comp_doubles);
 
     for(int i = 0; i < 9; i++)
         fprintf(stdout,"%f\t",andme[i]);
@@ -105,7 +100,7 @@ int main(int argc, char ** argv)
     fprintf(stdout,"\n");
 
 
-    insertion_sort(alsome,4,sizeof(my_struct),&comp_structs);
+    selection_sort(alsome,4,sizeof(my_struct),&comp_structs);
     for(int i = 0; i < 4; i++)
         fprintf(stdout,"%f\t",alsome[i].e);
     fprintf(stdout,"\n");
