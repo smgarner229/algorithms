@@ -3,16 +3,14 @@
 #include <string.h>
 #include "sort.h"
 
-int count_calls = 0;
-
-int increasing_ints(void * a, void * b)
+int increasing_ints(const void * a, const void * b)
 {
     int left = *(int*)a;
     int right = *(int*)b;
     return left - right;
 }
 
-int increasing_doubles(void * a, void * b)
+int increasing_doubles(const void * a, const void * b)
 {
     double left = *(double*)a;
     double right = *(double*)b;
@@ -27,53 +25,40 @@ typedef struct person{
     double height;
 }Person;
 
-void print_bits(Person people)
-{
-    for(int bit=0;bit<(sizeof(int)*8);bit++)
-    {
-        printf("%i",people.age&0x01);
-        people.age = people.age >> 1;
-    }
-    printf("\n");
-}
-
-
-int increasing_age(void * p1, void * p2)
+int increasing_age(const void * p1, const void * p2)
 {
     int a1 = ((Person*)p1)->age;
     int a2 = ((Person*)p2)->age;
     return increasing_ints(&a1,&a2);
 }
 
-int decreasing_age(void * p1, void * p2)
+int decreasing_age(const void * p1, const void * p2)
 {
     return -1 * increasing_age(p1,p2);
 }
 
-int alphabetically(void * p1, void * p2)
+int increasing_height(const void * p1, const void *p2)
 {
-    count_calls++;
-    fprintf(stdout,"Calls to alphabetical sort:\t%d\n",count_calls);
-    char n1[20], n2[20];
-    print_bits(*((Person*)p1));
-    print_bits(*((Person*)p2));
-    printf("%f\n",((Person*)p1)->height);
-    printf("%f\n",((Person*)p2)->height);
-    strcpy(n1,((Person*)p1)->name);
-    strcpy(n2,((Person*)p2)->name);
-//    char * n1 = ((Person*)p1)->name;
-//    char * n2 = ((Person*)p2)->name;
+    double h1 = ((Person*)p1)->height;
+    double h2 = ((Person*)p2)->height;
+    return increasing_doubles(&h1,&h2);
+}
+
+int alphabetically(const void * p1, const void * p2)
+{
+    const char * n1 = ((Person*)p1)->name;
+    const char * n2 = ((Person*)p2)->name;
     return strcmp(n1,n2);
 }
 
-void init_person(Person * person, char* name, int age, double height)
+void init_person(Person * person, char* name, const int age, const double height)
 {
     person->name=name;
     person->age=age;
     person->height=height;
 }
 
-void print_ordered(Person * people, size_t n_people, char* ordering_criterea)
+void print_ordered(const Person * people, const size_t n_people, const char* ordering_criterea)
 {
    fprintf(stdout, "List of poeople order by %s\n", ordering_criterea);
    fprintf(stdout, "Name\tAge\tHeight\n");
@@ -85,32 +70,41 @@ void print_ordered(Person * people, size_t n_people, char* ordering_criterea)
 
 int main(int argc, char**argv)
 {
-    Person people[4];
-    init_person(&people[0],"Rich",25,2.0);
-    init_person(&people[1],"Sally",8,1.0);
-    init_person(&people[2],"Alice",88,1.5);
-    init_person(&people[3],"Bob",55,2.2);
+    Person * people = malloc(sizeof(Person)*4);
+    init_person(people,"Rich",45,2.0);
+    init_person(people+1,"Sally",8,1.0);
+    init_person(people+2,"Alice",88,1.5);
+    init_person(people+3,"Bob",25,2.2);
+
+    typedef int(*sort_criterea)(const void *, const void *);
+
+    sort_criterea sort_list[4];
+    sort_list[0] = &increasing_age;
+    sort_list[1] = alphabetically;
+    sort_list[2] = &decreasing_age;
+    sort_list[3] = &increasing_height;
+
+    for(int i = 0; i < 4; i++)
+    {
+        insertion_sort(people,4,sizeof(Person),sort_list[i]);
+        print_ordered(people,4,"idk");
+    }
 
     print_ordered(people,4,"nothing");
-
-    print_bits(people[0]);
-
-    selection_sort(people,4,sizeof(Person),&alphabetically);
-    print_ordered(people,4,"alphabetically");
-    
+ 
     insertion_sort(people,4,sizeof(Person),&increasing_age);
     print_ordered(people,4,"increasing age");
-
-    selection_sort(people,4,sizeof(Person),&alphabetically);
-    print_ordered(people,4,"alphabetically");
-
-    insertion_sort(people,4,sizeof(Person),&increasing_age);
-    print_ordered(people,4,"increasing age");
-
-//    insertion_sort(people,4,sizeof(Person),&decreasing_age);
-//    print_ordered(people,4,"decreasing age");
 
     insertion_sort(people,4,sizeof(Person),&alphabetically);
     print_ordered(people,4,"alphabetically");
+
+    insertion_sort(people,4,sizeof(Person),&decreasing_age);
+    print_ordered(people,4,"decreasing age");
+
+    insertion_sort(people,4,sizeof(Person),&increasing_height);
+    print_ordered(people,4,"height");
+
+    free(people);
+
 }
 

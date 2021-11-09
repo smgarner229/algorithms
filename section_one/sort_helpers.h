@@ -14,7 +14,7 @@
  */
 void swap(void * a,
           void * b,
-          size_t data_size)
+          const size_t data_size)
 {
     char temp[data_size];
     memcpy(temp,a,data_size);

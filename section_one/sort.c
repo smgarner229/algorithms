@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include "sort_helpers.h"
@@ -13,24 +14,28 @@
  *                 Returns <=0 if the first argument should come first, > 0 if the second
  */
 void * insertion_sort(void * data, 
-                      size_t n_elem, 
-                      size_t data_size,
-                      int (*compare)(void*,void*))
+                      const int n_elem, 
+                      const size_t data_size,
+                      int (*compare)(const void*,const void*))
 {
+//    void * key = malloc(data_size);
     char key[data_size];
     int j = 0;
     for(int i = 1; i < n_elem; i++)
     {
         //Hold onto our current item being sorted, cast into a char array
-        memcpy(key,((char*)data)+i*data_size,data_size);
+        memcpy(key,data+i*data_size,data_size);
         j = i - 1;
         //Loop down the chain from current item to start of array, exitting when 
-        while(j>=0 & compare(((char*)data)+j*data_size,key) > 0)
+        //We no longer need to contine to swap data up a position
+        while(j>=0 && (*compare)(data+j*data_size,key) > 0)
         {
-            swap(((char*)data)+(j*data_size),((char*)data)+(j+1)*data_size,data_size);
+            swap(data+j*data_size,data+(j+1)*data_size,data_size);
             j--;
         }
     }
+//    free(key);
+    return data;
 }
 
 /**
@@ -44,9 +49,9 @@ void * insertion_sort(void * data,
  */
 
 void * selection_sort(void * data,
-                      size_t n_elem,
-                      size_t data_size,
-                      int (*compare)(void*,void*))
+                      const int n_elem,
+                      const size_t data_size,
+                      int (*compare)(const void*,const void*))
 {
     int cur_min;
     for(int i = 0; i < n_elem; i++)
@@ -54,13 +59,13 @@ void * selection_sort(void * data,
         cur_min = i;
         for(int j = i + 1; j < n_elem; j++)
         {
-            if(compare(((char*)data)+cur_min*data_size,((char*)data)+j*data_size)>0)
+            if(compare(data+cur_min*data_size,data+j*data_size)>0)
             {
                 cur_min = j;
             }
         }
-        swap(((char*)data)+i*data_size,((char*)data)+cur_min*data_size,data_size);
+        swap(data+i*data_size,data+cur_min*data_size,data_size);
     }
+    return data;
 }
-
 
