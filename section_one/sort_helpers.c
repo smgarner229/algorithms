@@ -8,6 +8,7 @@ void swap(void * a,
     memcpy(temp,a,data_size);
     memcpy(a,b,data_size);
     memcpy(b,temp,data_size);
+    return;
 }
 
 /**

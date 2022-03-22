@@ -2,6 +2,7 @@
 #define PERSON_H
 
 #include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include "sort_helpers.h"
 
@@ -12,6 +13,7 @@ typedef struct person{
 }Person;
 
 void init_person(Person * person, char* name, const int age, const double height);
+void clear_person(Person * person);
 
 void print_person(const Person * person);
 void print_ordered(const Person * people, const size_t n_people, const char* ordering_criterea);

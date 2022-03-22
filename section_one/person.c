@@ -2,14 +2,22 @@
 
 void init_person(Person * person, char* name, const int age, const double height)
 {
-    person->name=name;
+    person->name=strdup(name);
     person->age=age;
     person->height=height;
+    return;
+}
+
+void clear_person(Person * person)
+{
+    free(person->name);
+    return;
 }
 
 void print_person(const Person * person)
 {
     fprintf(stdout,"%s\t%d\t%f\n",person->name,person->age,person->height);
+    return;
 }
 
 void print_ordered(const Person * people, const size_t n_people, const char* ordering_criterea)
