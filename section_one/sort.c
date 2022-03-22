@@ -5,13 +5,16 @@
 #include "sort.h"
 
 /**
- * @brief Insertion sort algorithm.  Thread Safe.
+ * @brief Insertion sort algorithm.  MT-Safe
  * 
  * @param data pointer to start of array of elements
  * @param n_elem number of elements
  * @param data_size size of the data type being sorted in bytes
  * @param compare  Function which takes void pointer to the data type, and determines appropriate order. 
- *                 Returns <=0 if the first argument should come first, > 0 if the second
+ *                 Returns second argument less first argument
+ *                 This means if compare(a,b)=a-b => >0 if a>b, <0 if a<b
+ *                 Returns >0 if the first argument should come first, < 0 if the second, = if they are the same
+ *                 Chosen to match the convention of strcmp
  */
 void * insertion_sort(void * data, 
                       const int n_elem, 
@@ -39,13 +42,16 @@ void * insertion_sort(void * data,
 }
 
 /**
- * @brief Selection sort algorithm.  Thread Safe.
+ * @brief Selection sort algorithm.  MT-Safe
  * 
  * @param data pointer to start of array of elements
  * @param n_elem number of elements
  * @param data_size size of the data type being sorted in bytes
  * @param compare  Function which takes void pointer to the data type, and determines appropriate order. 
- *                 Returns <=0 if the first argument should come first, > 0 if the second
+ *                 Returns second argument less first argument
+ *                 This means if compare(a,b)=a-b => >0 if a>b, <0 if a<b
+ *                 Returns >0 if the first argument should come first, < 0 if the second, = if they are the same
+ *                 Chosen to match the convention of strcmp
  */
 
 void * selection_sort(void * data,
@@ -67,5 +73,98 @@ void * selection_sort(void * data,
         swap(data+i*data_size,data+cur_min*data_size,data_size);
     }
     return data;
+}
+
+/**
+ * @brief Merge sort merge helper
+ * 
+ * @param data pointer to start of array of elements
+ * @param left offset of the current substack's left most end
+ * @param mid pivot middle point, to which the left and right sub array are sorted
+ * @param right index of the rightmost element where we will sort until
+ * @param data_size size of the data type being sorted in bytes
+ * @param compare  Function which takes void pointer to the data type, and determines appropriate order. 
+ *                 Returns second argument less first argument
+ *                 This means if compare(a,b)=a-b => >0 if a>b, <0 if a<b
+ *                 Returns >0 if the first argument should come first, < 0 if the second, = if they are the same
+ *                 Chosen to match the convention of strcmp
+ */
+static void * _merge(void * data,
+                    int left,
+                    int mid,
+                    int right,
+                    const size_t data_size,
+                    int (*compare)(const void *, const void *))
+{
+  int n_left = mid - left + 1;
+  int n_right = right - mid;
+  char L[data_size*n_left];
+  char R[data_size*n_right];
+  memcpy(L,data+left*data_size,data_size*n_left);
+  memcpy(R,data+(mid+1)*data_size,data_size*n_right);
+  int l_current = 0;
+  int r_current = 0;
+  void * src_ptr;
+  for(int k = left; k <= right; k++)
+  {
+    if (l_current == n_left)
+      src_ptr=R+(r_current++)*data_size;
+    else if (r_current == n_right)
+      src_ptr=L+(l_current++)*data_size;
+    else if (compare(L+l_current*data_size,R+r_current*data_size)<0)
+      src_ptr=L+(l_current++)*data_size;
+    else
+      src_ptr=R+(r_current++)*data_size;
+    memcpy(data+k*data_size,src_ptr,data_size);
+  } 
+}
+
+/**
+ * @brief Merge sort core algorithm, called recursively
+ * 
+ * @param data pointer to start of array of elements
+ * @param left offset of the current substack's left most end
+ * @param right index of the rightmost element where we will sort until
+ * @param data_size size of the data type being sorted in bytes
+ * @param compare  Function which takes void pointer to the data type, and determines appropriate order. 
+ *                 Returns second argument less first argument
+ *                 This means if compare(a,b)=a-b => >0 if a>b, <0 if a<b
+ *                 Returns >0 if the first argument should come first, < 0 if the second, = if they are the same
+ *                 Chosen to match the convention of strcmp
+ */
+static void * _merge_sort(void * data,
+                          int left,
+                          int right,
+                          const size_t data_size,
+                          int (*compare)(const void *, const void *))
+{
+  if (left >= right)
+    return data;
+  int mid = (left+right)/2;
+  _merge_sort(data,left,mid,data_size,compare);
+  _merge_sort(data,mid+1,right,data_size,compare);
+  _merge(data,left,mid,right,data_size,compare);  
+  return data;
+}
+
+/**
+ * @brief Merge sort algorithm, with signature to match standard soring algorithm  MT-Safe
+ * 
+ * @param data pointer to start of array of elements
+ * @param n_elem number of elements
+ * @param data_size size of the data type being sorted in bytes
+ * @param compare  Function which takes void pointer to the data type, and determines appropriate order. 
+ *                 Returns second argument less first argument
+ *                 This means if compare(a,b)=a-b => >0 if a>b, <0 if a<b
+ *                 Returns >0 if the first argument should come first, < 0 if the second, = if they are the same
+ *                 Chosen to match the convention of strcmp
+ */
+void * merge_sort(void * data,
+		  const int n_elem,
+		  const size_t data_size,
+		  int (*compare)(const void *, const void *))
+{
+  _merge_sort(data,0,n_elem-1,data_size,compare);	
+  return data;
 }
 
